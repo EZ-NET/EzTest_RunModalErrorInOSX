@@ -10,14 +10,13 @@ import Cocoa
 
 class ModalWindow: NSWindow {
 
+    var lastMessage:MessageWhenDeallocate!
+    
     override func awakeFromNib() {
         
         super.awakeFromNib()
         Swift.print(NSString(format: "👶 Awake Modal Window = %p", self))
-    }
-    
-    deinit {
         
-        Swift.print(NSString(format: "👼 Modal Window Dealocated."))
+        self.lastMessage = MessageWhenDeallocate(String(format: "👼 Modal Window Dealocated (%p)", self))
     }
 }

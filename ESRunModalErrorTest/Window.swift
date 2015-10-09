@@ -10,14 +10,13 @@ import Cocoa
 
 class Window: NSWindow {
 
+    var lastMessage:MessageWhenDeallocate!
+    
     override func awakeFromNib() {
         
         super.awakeFromNib()
         Swift.print(NSString(format: "👶 Awake Main Window = %p", self))
-    }
-    
-    deinit {
         
-        Swift.print(NSString(format: "👼 Main Window Dealocated."))
+        self.lastMessage = MessageWhenDeallocate(String(format: "👼 Main Window Dealocated (%p)", self))
     }
 }

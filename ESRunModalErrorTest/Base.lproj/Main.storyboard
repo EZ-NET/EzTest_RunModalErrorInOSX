@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -645,7 +647,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ESRunModalErrorTest" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42.5" y="145"/>
+            <point key="canvasLocation" x="-205.5" y="-29"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -654,7 +656,7 @@
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="Window" customModule="ESRunModalErrorTest" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="262" height="81"/>
+                        <rect key="contentRect" x="196" y="240" width="567" height="136"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
@@ -663,53 +665,135 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-25" y="325.5"/>
+            <point key="canvasLocation" x="-179.5" y="173"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="ESRunModalErrorTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="272" height="94"/>
+                    <view key="view" id="m2S-Jp-Qdl" customClass="View" customModule="ESRunModalErrorTest" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="571" height="160"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jXH-dC-7xF">
-                                <rect key="frame" x="14" y="46" width="244" height="32"/>
+                            <stackView distribution="fillEqually" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jaV-Ne-yRV">
+                                <rect key="frame" x="20" y="20" width="531" height="120"/>
+                                <subviews>
+                                    <box title="Show as Modal" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="D0c-eZ-2BJ">
+                                        <rect key="frame" x="-3" y="-4" width="268" height="124"/>
+                                        <view key="contentView" id="cGj-aK-fn3">
+                                            <rect key="frame" x="1" y="1" width="266" height="108"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yFk-nL-yUg">
+                                                    <rect key="frame" x="2" y="43" width="262" height="32"/>
+                                                    <animations/>
+                                                    <buttonCell key="cell" type="push" title="Show WindowController" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Ev-9W-4tF">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <segue destination="m8N-XX-uDG" kind="modal" id="1ZM-Qi-2hq"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jXH-dC-7xF">
+                                                    <rect key="frame" x="2" y="72" width="262" height="32"/>
+                                                    <animations/>
+                                                    <buttonCell key="cell" type="push" title="Show ViewController" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rAu-05-pkK">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="systemBold"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <segue destination="vT3-1x-tV0" kind="modal" id="uW3-ck-HPo"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jXH-dC-7xF" firstAttribute="leading" secondItem="cGj-aK-fn3" secondAttribute="leading" constant="8" id="FEB-26-kCh"/>
+                                                <constraint firstItem="yFk-nL-yUg" firstAttribute="top" secondItem="jXH-dC-7xF" secondAttribute="bottom" constant="8" id="O7g-4X-dCQ"/>
+                                                <constraint firstItem="jXH-dC-7xF" firstAttribute="top" secondItem="cGj-aK-fn3" secondAttribute="top" constant="8" id="R3v-dR-Hcn"/>
+                                                <constraint firstItem="yFk-nL-yUg" firstAttribute="leading" secondItem="cGj-aK-fn3" secondAttribute="leading" constant="8" id="WUc-ZN-TYb"/>
+                                                <constraint firstAttribute="trailing" secondItem="yFk-nL-yUg" secondAttribute="trailing" constant="8" id="qNy-SX-kVH"/>
+                                                <constraint firstAttribute="trailing" secondItem="jXH-dC-7xF" secondAttribute="trailing" constant="8" id="wCV-Lc-dpc"/>
+                                            </constraints>
+                                            <animations/>
+                                        </view>
+                                        <animations/>
+                                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </box>
+                                    <box title="Show as Modeless" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="v6x-cP-nCR">
+                                        <rect key="frame" x="267" y="-4" width="267" height="124"/>
+                                        <view key="contentView" id="dfC-4A-dRX">
+                                            <rect key="frame" x="1" y="1" width="265" height="108"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AEz-Zv-8F3">
+                                                    <rect key="frame" x="2" y="72" width="262" height="32"/>
+                                                    <animations/>
+                                                    <buttonCell key="cell" type="push" title="Show ViewController" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gTL-ej-d9R">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <segue destination="vT3-1x-tV0" kind="show" id="rrJ-xf-3XA"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="L96-9g-chg">
+                                                    <rect key="frame" x="2" y="43" width="262" height="32"/>
+                                                    <animations/>
+                                                    <buttonCell key="cell" type="push" title="Show WindowController" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="350-p4-nUX">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <segue destination="m8N-XX-uDG" kind="show" id="jaf-c0-IDV"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="AEz-Zv-8F3" firstAttribute="top" secondItem="dfC-4A-dRX" secondAttribute="top" constant="8" id="K2l-pu-n0X"/>
+                                                <constraint firstItem="AEz-Zv-8F3" firstAttribute="leading" secondItem="dfC-4A-dRX" secondAttribute="leading" constant="8" id="NH9-2D-dxb"/>
+                                                <constraint firstAttribute="trailing" secondItem="AEz-Zv-8F3" secondAttribute="trailing" constant="8" id="UO8-hC-1zs"/>
+                                                <constraint firstItem="L96-9g-chg" firstAttribute="top" secondItem="AEz-Zv-8F3" secondAttribute="bottom" constant="8" id="ajq-w0-LU4"/>
+                                                <constraint firstAttribute="trailing" secondItem="L96-9g-chg" secondAttribute="trailing" constant="8" id="kOZ-Zz-9UQ"/>
+                                                <constraint firstItem="L96-9g-chg" firstAttribute="leading" secondItem="dfC-4A-dRX" secondAttribute="leading" constant="8" id="uEF-zb-hOc"/>
+                                            </constraints>
+                                            <animations/>
+                                        </view>
+                                        <animations/>
+                                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </box>
+                                </subviews>
                                 <animations/>
-                                <buttonCell key="cell" type="push" title="Show ViewController as Modal" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rAu-05-pkK">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="vT3-1x-tV0" kind="modal" id="uW3-ck-HPo"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yFk-nL-yUg">
-                                <rect key="frame" x="14" y="13" width="244" height="32"/>
-                                <animations/>
-                                <buttonCell key="cell" type="push" title="Show WindowController as Modal" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Ev-9W-4tF">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="m8N-XX-uDG" kind="modal" id="1ZM-Qi-2hq"/>
-                                </connections>
-                            </button>
+                                <constraints>
+                                    <constraint firstItem="v6x-cP-nCR" firstAttribute="top" secondItem="jaV-Ne-yRV" secondAttribute="top" id="Qeg-23-yLT"/>
+                                    <constraint firstAttribute="bottom" secondItem="v6x-cP-nCR" secondAttribute="bottom" id="Qqy-Mj-ynx"/>
+                                    <constraint firstAttribute="height" constant="120" id="axw-rP-Xhp"/>
+                                    <constraint firstAttribute="bottom" secondItem="D0c-eZ-2BJ" secondAttribute="bottom" id="bv3-lV-vlh"/>
+                                    <constraint firstItem="D0c-eZ-2BJ" firstAttribute="top" secondItem="jaV-Ne-yRV" secondAttribute="top" id="dy1-6o-YGl"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="jXH-dC-7xF" secondAttribute="trailing" constant="20" id="L6N-Vx-Sbp"/>
-                            <constraint firstItem="yFk-nL-yUg" firstAttribute="trailing" secondItem="jXH-dC-7xF" secondAttribute="trailing" id="Pho-Ea-Q58"/>
-                            <constraint firstItem="yFk-nL-yUg" firstAttribute="leading" secondItem="jXH-dC-7xF" secondAttribute="leading" id="SSi-vp-fU5"/>
-                            <constraint firstItem="yFk-nL-yUg" firstAttribute="top" secondItem="jXH-dC-7xF" secondAttribute="bottom" constant="12" id="WWR-da-3YG"/>
-                            <constraint firstItem="jXH-dC-7xF" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="iEJ-7B-ofs"/>
-                            <constraint firstItem="jXH-dC-7xF" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ztD-D7-sLh"/>
+                            <constraint firstItem="jaV-Ne-yRV" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="01l-dO-F38"/>
+                            <constraint firstItem="jaV-Ne-yRV" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="VgA-zB-yJA"/>
+                            <constraint firstAttribute="trailing" secondItem="jaV-Ne-yRV" secondAttribute="trailing" constant="20" id="qUB-LJ-Nbh"/>
                         </constraints>
                         <animations/>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-29.5" y="567"/>
+            <point key="canvasLocation" x="-179.5" y="479"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="Kcp-sB-I5A">
@@ -727,13 +811,13 @@
                 </windowController>
                 <customObject id="4HM-pD-M52" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="412" y="572.5"/>
+            <point key="canvasLocation" x="432" y="487.5"/>
         </scene>
         <!--Modal View Controller On Window-->
         <scene sceneID="oMj-Vc-wbm">
             <objects>
                 <viewController id="6Ip-xU-BFu" customClass="ModalViewControllerOnWindow" customModule="ESRunModalErrorTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="C46-wW-zKF">
+                    <view key="view" id="C46-wW-zKF" customClass="ModalView" customModule="ESRunModalErrorTest" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="106" height="61"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -754,13 +838,13 @@
                 </viewController>
                 <customObject id="Yu9-BP-aPx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="416" y="793.5"/>
+            <point key="canvasLocation" x="432" y="742.5"/>
         </scene>
         <!--Modal View Controller-->
         <scene sceneID="z4a-7W-mlh">
             <objects>
                 <viewController id="vT3-1x-tV0" customClass="ModalViewController" customModule="ESRunModalErrorTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="dnn-iL-BsS">
+                    <view key="view" id="dnn-iL-BsS" customClass="ModalView" customModule="ESRunModalErrorTest" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="106" height="61"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -781,7 +865,11 @@
                 </viewController>
                 <customObject id="FaX-Q6-dbb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="222" y="793.5"/>
+            <point key="canvasLocation" x="-180" y="742.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jaf-c0-IDV"/>
+        <segue reference="uW3-ck-HPo"/>
+    </inferredMetricsTieBreakers>
 </document>

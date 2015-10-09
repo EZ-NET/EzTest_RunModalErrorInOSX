@@ -10,10 +10,14 @@ import Cocoa
 
 class ModalViewControllerOnWindow: NSViewController {
 
+    var lastMessage:MessageWhenDeallocate!
+    
     override func awakeFromNib() {
         
         super.awakeFromNib()
         Swift.print(NSString(format: "👶 Awake Modal View Controller = %p", self))
+        
+        self.lastMessage = MessageWhenDeallocate(String(format: "👼 Modal View Controller Dealocated (%p)", self))
     }
     
     override func dismissController(sender: AnyObject?) {
@@ -23,10 +27,5 @@ class ModalViewControllerOnWindow: NSViewController {
 
         Swift.print(NSString(format: "📍 A window for Modal View Controller (%p) will close.", self))
         self.view.window?.close()
-    }
-    
-    deinit {
-        
-        Swift.print(NSString(format: "👼 Modal View Controller Dealocated."))
     }
 }
