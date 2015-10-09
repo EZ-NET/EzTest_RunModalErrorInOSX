@@ -7,19 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B14A9F9C1BC743F800192FD3 /* ModalViewControllerOnWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A9F9B1BC743F800192FD3 /* ModalViewControllerOnWindow.swift */; settings = {ASSET_TAGS = (); }; };
 		B18AA98E1BC6B69000056E86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18AA98D1BC6B69000056E86 /* AppDelegate.swift */; };
 		B18AA9901BC6B69000056E86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18AA98F1BC6B69000056E86 /* ViewController.swift */; };
 		B18AA9921BC6B69000056E86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18AA9911BC6B69000056E86 /* Assets.xcassets */; };
 		B18AA9951BC6B69000056E86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B18AA9931BC6B69000056E86 /* Main.storyboard */; };
+		B18AA99D1BC6B9E300056E86 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18AA99C1BC6B9E300056E86 /* ModalViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B18AA9A01BC6B9F700056E86 /* ModalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18AA99E1BC6B9F700056E86 /* ModalWindowController.swift */; settings = {ASSET_TAGS = (); }; };
+		B18AA9A31BC6BA1F00056E86 /* ModalWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18AA9A21BC6BA1F00056E86 /* ModalWindow.swift */; settings = {ASSET_TAGS = (); }; };
+		B18AA9A51BC6BAAB00056E86 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18AA9A41BC6BAAB00056E86 /* Window.swift */; settings = {ASSET_TAGS = (); }; };
+		B18AA9A71BC6BAB500056E86 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18AA9A61BC6BAB500056E86 /* WindowController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B14A9F9B1BC743F800192FD3 /* ModalViewControllerOnWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerOnWindow.swift; sourceTree = "<group>"; };
 		B18AA98A1BC6B69000056E86 /* ESRunModalErrorTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESRunModalErrorTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18AA98D1BC6B69000056E86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B18AA98F1BC6B69000056E86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B18AA9911BC6B69000056E86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B18AA9941BC6B69000056E86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B18AA9961BC6B69000056E86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B18AA99C1BC6B9E300056E86 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		B18AA99E1BC6B9F700056E86 /* ModalWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalWindowController.swift; sourceTree = "<group>"; };
+		B18AA9A21BC6BA1F00056E86 /* ModalWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalWindow.swift; sourceTree = "<group>"; };
+		B18AA9A41BC6BAAB00056E86 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		B18AA9A61BC6BAB500056E86 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,12 @@
 			children = (
 				B18AA98D1BC6B69000056E86 /* AppDelegate.swift */,
 				B18AA98F1BC6B69000056E86 /* ViewController.swift */,
+				B18AA9A61BC6BAB500056E86 /* WindowController.swift */,
+				B18AA9A41BC6BAAB00056E86 /* Window.swift */,
+				B18AA99C1BC6B9E300056E86 /* ModalViewController.swift */,
+				B14A9F9B1BC743F800192FD3 /* ModalViewControllerOnWindow.swift */,
+				B18AA99E1BC6B9F700056E86 /* ModalWindowController.swift */,
+				B18AA9A21BC6BA1F00056E86 /* ModalWindow.swift */,
 				B18AA9911BC6B69000056E86 /* Assets.xcassets */,
 				B18AA9931BC6B69000056E86 /* Main.storyboard */,
 				B18AA9961BC6B69000056E86 /* Info.plist */,
@@ -131,7 +149,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B18AA9901BC6B69000056E86 /* ViewController.swift in Sources */,
+				B18AA99D1BC6B9E300056E86 /* ModalViewController.swift in Sources */,
+				B18AA9A31BC6BA1F00056E86 /* ModalWindow.swift in Sources */,
+				B18AA9A71BC6BAB500056E86 /* WindowController.swift in Sources */,
 				B18AA98E1BC6B69000056E86 /* AppDelegate.swift in Sources */,
+				B18AA9A01BC6B9F700056E86 /* ModalWindowController.swift in Sources */,
+				B18AA9A51BC6BAAB00056E86 /* Window.swift in Sources */,
+				B14A9F9C1BC743F800192FD3 /* ModalViewControllerOnWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +296,7 @@
 				B18AA99B1BC6B69000056E86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
