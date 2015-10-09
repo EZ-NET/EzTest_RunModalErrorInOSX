@@ -18,6 +18,6 @@ class ModalWindow: NSWindow {
     
     deinit {
         
-        Swift.print(NSString(format: "👼 Modal Window Dealocated (%p)", self))
+        Swift.print(NSString(format: "👼 Modal Window Dealocated."))
     }
 }

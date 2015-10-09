@@ -27,6 +27,6 @@ class ModalViewController: NSViewController {
     
     deinit {
         
-        Swift.print(NSString(format: "👼 Modal View Controller Dealocated (%p)", self))
+        Swift.print(NSString(format: "👼 Modal View Controller Dealocated."))
     }
 }

@@ -18,6 +18,6 @@ class WindowController: NSWindowController {
     
     deinit {
         
-        Swift.print(NSString(format: "👼 Main Window Controller Dealocated (%p)", self))
+        Swift.print(NSString(format: "👼 Main Window Controller Dealocated."))
     }
 }

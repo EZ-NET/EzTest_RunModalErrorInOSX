@@ -18,6 +18,6 @@ class Window: NSWindow {
     
     deinit {
         
-        Swift.print(NSString(format: "👼 Main Window Dealocated (%p)", self))
+        Swift.print(NSString(format: "👼 Main Window Dealocated."))
     }
 }
